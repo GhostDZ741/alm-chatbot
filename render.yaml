@@ -1,0 +1,37 @@
+# Render.com blueprint — deploy con un clic
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: alm-chatbot
+    runtime: python
+    region: ohio
+    plan: free
+    buildCommand: pip install -r alm_bot/requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    workingDirectory: ./alm_bot
+    healthCheckPath: /health
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: WHATSAPP_PHONE_NUMBER_ID
+        sync: false
+      - key: WHATSAPP_ACCESS_TOKEN
+        sync: false
+      - key: META_VERIFY_TOKEN
+        value: alm_webhook_2024_secure
+      - key: PORT
+        value: 8000
+      - key: AGENCY_NAME
+        value: Arab Lion Marketing
+      - key: BOT_NAME
+        value: Leo
+      - key: CEO_WHATSAPP_NUMBER
+        sync: false
+      - key: CALCOM_LINK
+        sync: false
+      - key: GOOGLE_SHEETS_ID
+        sync: false
+      - key: GOOGLE_SERVICE_ACCOUNT_EMAIL
+        sync: false
+      - key: GOOGLE_PRIVATE_KEY
+        sync: false

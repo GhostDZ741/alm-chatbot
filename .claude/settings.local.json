@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s http://localhost:5678/healthz)",
+      "Bash(curl -s http://localhost:5679/healthz)",
+      "Bash(curl --version)",
+      "Bash(jq --version)",
+      "Bash(netstat -tlnp)",
+      "Bash(command -v jq)",
+      "Bash(mkdir -p /usr/local/bin)",
+      "Bash(curl -sL \"https://github.com/jqlang/jq/releases/latest/download/jq-win64.exe\" -o /usr/local/bin/jq)",
+      "Bash(chmod +x /usr/local/bin/jq)",
+      "Bash(echo \"✅ jq ya instalado: $\\(jq --version\\)\")",
+      "Bash(command -v cloudflared)",
+      "Bash(cloudflared --version)",
+      "Bash(echo \"✅ cloudflared ya instalado: $\\(cloudflared --version\\)\")",
+      "Bash(mkdir -p ~/alm-bot/bin)",
+      "Bash(curl -sL \"https://github.com/jqlang/jq/releases/latest/download/jq-win64.exe\" -o ~/alm-bot/bin/jq.exe)",
+      "Bash(chmod +x ~/alm-bot/bin/jq.exe)",
+      "Bash(~/alm-bot/bin/jq.exe --version)",
+      "Bash(curl -sL \"https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe\" -o ~/alm-bot/bin/cloudflared.exe)",
+      "Bash(chmod +x ~/alm-bot/bin/cloudflared.exe)",
+      "Bash(~/alm-bot/bin/cloudflared.exe --version)"
+    ]
+  }
+}
